@@ -58,6 +58,27 @@ function merge($tab,$a,$m,$b){
                                 [k];
                                                         }
                 }
+    /**
+    *@param  $logins le tableau contenant les logins et les noms des votés 
+    *@param $notes ,tableau contenant les notes classés et les logins des votés 
+    *@return tableau des noms des votés classés selon l'ordre de $notes
+    **/
+    function lierNoteToId($logins,$notes){
+        $tab;
+
+        foreach($logins as $nom)
+        {
+          foreach ($notes as $classement) {
+            //si un nom est égal au classement alors ce nom sera placé dans $tab
+            if(strcmp($noms,$classement)==0){
+                $tab[]=$nom;
+            }
+              # code...
+            }
+          }
+        }
+
+    }
 
 ?> 
 <!DOCTYPE html>
