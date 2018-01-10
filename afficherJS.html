@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Connexion Talent Rank</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	  <script id="rank" src="http://www.iut-fbleau.fr/projet/maths/?rah_external_output=pagerank.js"></script>
+</head>
+<body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <div id="resultat">
+        	
+        </div>
+        <script>
+        alert("test");
+		
+            var Votes= class Votes{
+        constructor(){
+            
+        }
+        getVoteASR(pagerank){
+        var asr=[];
+		for(var login in pagerank){//parcours login
+			for(var matiere in pagerank[login]){//parcours matiere
+				if(matiere=='ASR'){
+					var voted=[];
+					for(var nomEleve in matiere){//ajoute les élèves
+						voted.push(matiere[nomEleve]);
+						document.writer("nomEleve: "+nomEleve);
+					}
+					asr[login]=voted;
+				}
+				
+			}
+
+		
+		}
+		return asr;
+        }
+     };
+        
+	var test=new Votes();
+	var tabTest=test.getVoteASR(votes);
+	document.write("Yo");
+
+        </script>
+       
+</body>
+</html>
+ var Votes= class Votes{
+        constructor(){
+            
+        }
+        getVoteASR(pagerank){
+        var asr[];

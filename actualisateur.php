@@ -1,3 +1,22 @@
+<?php
+
+if(isset($_POST['login'])==true/* && isset($_POST['rank'])==true*/){
+$user=$_POST['login'];
+$_SESSION['log']=$user;
+//$pwd=$_POST['rank'];
+
+// now this data can be used for any function.
+
+//One can even add this to database.
+
+//We will just echo the data.
+
+echo "<p>".$_SESSION['log']['borelle']."</p>";
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +35,7 @@
 
 			
 
-			<button type="button" onclick="submit_form();">Actualiser Classement</button>
+			<button id="sub" type="button" onclick="submit_form();">Actualiser Classement</button>
 
 			</form>
 			
@@ -27,21 +46,23 @@
 
 		{
 		var maVar=logins;
-		var maVar2=pagerank;
+		var maVar2=votes;
 
 		//var data1=$("#uname").val();
 
 		//var data2=$("#pwd").val();
+		
+		
 
-		var dataTosend='logins='+maVar+'&pagerank='+maVar2;
-
+		
+ 	
 		$.ajax({
 
 		url: 'add-user.php',
 
 		type: 'POST',
 
-		data:dataTosend,
+		data:{login:maVar},
 
 		async: true,
 
@@ -49,9 +70,12 @@
 
 		alert(data);
 
-		},
+		}
 
 		});
+		      
+      
+ }
 
 					
 			</script>

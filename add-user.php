@@ -1,8 +1,8 @@
 <?php
-
-$user=$_POST['logins'];
-
-$pwd=$_POST['pagerank'];
+if(isset($_POST['login'])==true && isset($_POST['rank'])==true){
+$user=$_POST['login'];
+$_SESSION['log']=$user;
+//$pwd=$_POST['rank'];
 
 // now this data can be used for any function.
 
@@ -10,15 +10,19 @@ $pwd=$_POST['pagerank'];
 
 //We will just echo the data.
 
-echo "username=".$user."password=".$pwd;
+echo "<p>".$_SESSION['log']['borelle']."</p>";
+}
+
 
 ?>
+
+
 <?php
 //TriFusion PHP
-function tri($tab,$n){
+/*function tri($tab,$n){
             $res=mergeSort($tab,0,$n-1);
 }
-function mergeSort($tab,$a,$b){
+/*function mergeSort($tab,$a,$b){
                 int $m;
                 if($a<$b){
                         $m=($a+$b)/2;
@@ -57,13 +61,14 @@ function merge($tab,$a,$m,$b){
                                 $tab[k]=$aux
                                 [k];
                                                         }
-                }
+                }*/
     /**
     *@param  $logins le tableau contenant les logins et les noms des votés 
     *@param $notes ,tableau contenant les notes classés et les logins des votés 
     *@return tableau des noms des votés classés selon l'ordre de $notes
     **/
-    function lierNoteToId($logins,$notes){
+
+   /* function lierNoteToId($logins,$notes){
         $tab;
 
         foreach($logins as $nom)
@@ -78,22 +83,6 @@ function merge($tab,$a,$m,$b){
           }
         }
 
-    }
-
+    
+*/
 ?> 
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-        <title>Titre</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <script id="rank" src="http://www.iut-fbleau.fr/projet/maths/?rah_external_output=pagerank.js"></script>
-   	    <script id="login" src="http://www.iut-fbleau.fr/projet/maths/?rah_external_output=logins.js"></script>
-
-    </head>
-
-    <body>
-   	</body>
-</html>
